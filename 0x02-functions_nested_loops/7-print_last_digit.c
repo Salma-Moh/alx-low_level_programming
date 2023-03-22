@@ -25,4 +25,10 @@ int print_last_digit(int k)
 	}
 	_putchar(i + '0');
 	return (i);
+	int r;
+
+	r = print_last_digit(INT_MIN);
+	_putchar('0' + r);
+	_putchar('\n');
+	return (0);
 }
