@@ -1,34 +1,20 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
- * main - entry point
- *
- * Return: 0 Success
- */
-int main()
-{
-	long int i, j, k, n = 612852475143;
+ * main - prints the largest prime factor of 612852475143
+ * Bwave ICT / Bright Daniel
+ * Return: always 0
+ **/
 
-	i = 2;
-	while(i < n)
+int main(void)
+{
+	unsigned long int i, n = 612852475143;
+
+	for (i = 3; i < 782849; i = i + 2)
 	{
-		if (n % i == 0)
-		{
-			j = 2;
-			while(j < i)
-			{
-				if (i % j == 0)
-				{
-					break;
-				}
-				else
-					j++;
-			}
-			if (j == i)
-				k = i;
-		}
-		i++;
+		while ((n % i == 0) && (n != i))
+			n = n / i;
 	}
-	printf("%d\n", k);
+	printf("%lu\n", n);
 	return (0);
 }
