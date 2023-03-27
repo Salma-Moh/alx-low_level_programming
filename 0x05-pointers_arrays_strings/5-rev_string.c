@@ -1,18 +1,41 @@
-#include <stdio.h>
-
-void rev_string(char *);
+#include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * rev_string - prints string in reverse
+ * @s: string to be reversed
  *
- * Return: Always 0.
+ * Return: void
  */
-int main(void)
+void rev_string(char *s)
 {
-	char s[446] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+	int c, j, k, m;
+	char *r;
 
-	printf("%s\n", s);
-	rev_string(s);
-	printf("%s\n", s);
-	return (0);
+	for (m = 0; m < 1; m++)
+	{
+		if (*s == '\0')
+			break;
+		j = 0;
+		while (*s != '\0')
+		{
+			*r = *s;
+			r++;
+			s++;
+			j++;
+		}
+		c = j;
+		while (j >= 0)
+		{
+			s--;
+			j--;
+		}
+		k = 0;
+		while (k <= c)
+		{
+			*s = *r;
+			s++;
+			r--;
+			k++;
+		}
+	}
 }
