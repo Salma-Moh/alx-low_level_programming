@@ -1,2 +1,1 @@
-Hello World
-This is the folder for the beginner project on C. Hello World_
+This is a readme for this directory

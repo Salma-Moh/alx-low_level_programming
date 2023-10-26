@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main - entry point
+ * main - print quote
  *
- * the string in the writevariable is printed
- * Return: Always 1
+ * Return: Always 1 (Success)
  */
 int main(void)
 {
