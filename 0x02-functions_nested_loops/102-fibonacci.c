@@ -1,24 +1,29 @@
 #include <stdio.h>
-
 /**
- * main - prints first 50 terms of fibonacci sequence
+ * main - print first 50 fibonacci
  *
- * Return: 0
+ * Return: 0 always.
  */
 int main(void)
 {
-	long a, b, c, d;
+	long int i, x = 1, y = 2, sum = 0;
 
-	b = 1;
-	c = 2;
-	printf("%ld, %ld", b, c);
-	for (a = 0; a < 48; a++)
+	for (i = 0; i < 49; i++)
+
 	{
-		d = b + c;
-		b = c;
-		c = d;
-		printf(", %ld", d);
+
+		printf("%ld, ", x);
+
+		sum = x + y;
+
+		x = y;
+
+		y = sum;
+
+		if (i == 48)
+
+			printf("%ld\n", x);
 	}
-	printf("\n");
 	return (0);
+
 }

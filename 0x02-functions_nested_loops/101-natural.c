@@ -1,24 +1,23 @@
 #include <stdio.h>
-
 /**
- * main - entry  point
+ * main - check for multiples of 3 and 5
  *
- * Return: 0
+ * Return: 0 always
  */
 int main(void)
 {
-	int i, j;
+	int x = 1024, y, sum = 0;
 
-	j = 0;
-	i = 3;
-	while (i < 1024)
+	for (y = 0; y < x; y++)
+
 	{
-		if (i % 3 == 0)
-			j += i;
-		else if (i % 5 == 0)
-			j += i;
-		i++;
+
+		if ((y % 3 == 0) || (y % 5 == 0))
+		{
+			if ((y % 3 == 0) || (y % 5 == 0))
+		}
 	}
-	printf("%d\n", j);
+	printf("%d\n", sum);
+
 	return (0);
 }

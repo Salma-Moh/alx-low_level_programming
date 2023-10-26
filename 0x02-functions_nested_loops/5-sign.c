@@ -1,29 +1,25 @@
 #include "main.h"
-
 /**
- * print_sign - checks polarity of input
- * @n: input to be checked
- *
- * Return: 1 if positive, 0 if input us zero, -1 if negative
+ * print_sign - Print the sign of a number
+ * @n: type int integer, can be negative or positive
+ * Description: print +, 0, or - depending on number, along with return
+ * Return: 1 if +, 0 if 0, and -1 if -
  */
 int print_sign(int n)
 {
-	int i;
-
 	if (n > 0)
 	{
-		i = 1;
 		_putchar('+');
+		return (1);
 	}
 	else if (n < 0)
 	{
-		i = -1;
 		_putchar('-');
+		return (-1);
 	}
 	else
 	{
-		i = 0;
 		_putchar('0');
+		return (0);
 	}
-	return (i);
 }

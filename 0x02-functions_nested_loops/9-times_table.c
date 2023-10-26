@@ -1,63 +1,37 @@
 #include "main.h"
-
 /**
- * print_number - prints input integer
- * @n: integer to print
- * Return: void
- */
-void print_number(int n)
-{
-	int a, b;
-
-	if (n != 0)
-	{
-		if (n < 0)
-		{
-			_putchar('-');
-			n = -n;
-		}
-		a = n / 10;
-		b = n % 10;
-		if (a != 0)
-		{
-			print_number(a);
-			_putchar(b + '0');
-		}
-		else
-			_putchar(b + '0');
-
-	}
-	else
-		_putchar('0');
-}
-
-/**
- * times_table - prints times table up to 9 times
- *
- * Return: void
+ * times_table -  a function that prints the 9 times table, starting with 0
+ * rone = row, cone = column, d = digits of current result
+ * Return: times table
+ * add extra space past single digit
  */
 void times_table(void)
 {
-	int i, j, k;
+	int r, c, d;
 
-	for (i = 0; i <= 9; i++)
+	for (r = 0; r <= 9; r++)
 	{
 		_putchar('0');
-		for (j = 1; j <= 9; j++)
+		_putchar(',');
+		_putchar(' ');
+		for (c = 1; c <= 9; c++)
 		{
-			k = i * j;
-			if ((k > 9) && (k < 100))
+			d = (r * c);
+			if ((d / 10) > 0)
 			{
-				_putchar(',');
-				_putchar(' ');
-				print_number(k);
+				_putchar((d / 10) + '0');
 			}
 			else
 			{
+				_putchar(' ');
+			}
+			_putchar((d % 10) + '0');
+
+
+			if (c < 9)
+			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
-				_putchar(k + '0');
 			}
 		}
 		_putchar('\n');
