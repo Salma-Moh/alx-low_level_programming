@@ -1,65 +1,32 @@
-# C - Bit manipulation
+# 0x14. C - Bit manipulation
 
-In this project, I learned how to manipulate bits and use the
-bitwise operators `>>`, `<<`, `&`, `|`, and `^` in C.
+# ![alt text](https://github.com/Dikachis/alx-low_level_programming/blob/master/image/bitwise.png?raw=true)
 
-## Header File :file_folder:
+## Introduction/Objective
+* To look for the right source of information without too much help
+* To know how to manipulate bits and use bitwise operators
 
-* [main.h](./main.h): Header file containing prototypes for all
-functions written in the project.
+## General Requirements
+* Allowed editors: **vi**, **vim**, **emacs**
+* All files is compiled on **Ubuntu 20.04 LTS using gcc**, using the options **-Wall -Werror -Wextra -pedantic -std=gnu89**
+* All files ends with a new line
+* There is a **README.md** file, at the root of the folder of the project
+* Codes are compiled using the **Betty style**
+* The only C standard library functions allowed are **malloc**, **free** and **exit**.
+* Also allowed to use **_putchar**
+* The prototypes of all your functions and the prototype of the function **_putchar** should be included in your header file called main.h
+* All header files were include guarded
 
-| File                   | Prototype                                                           |
-| ---------------------- | ------------------------------------------------------------------- |
-| `0-binary_to_uint.c`   | `unsigned int binary_to_uint(const char *b);`                       |
-| `1-print_binary.c`     | `void print_binary(unsigned long int n);`                           |
-| `2-get_bit.c`          | `int get_bit(unsigned long int n, unsigned int index);`             |
-| `3-set_bit.c`          | `int set_bit(unsigned long int *n, unsigned int index);`            |
-| `4-clear_bit.c`        | `int clear_bit(unsigned long int *n, unsigned int index);`          |
-| `5-flip_bits.c`        | `unsigned int flip_bits(unsigned long int n, unsigned long int m);` |
-| `100-get_endianness.c` | `int get_endianness(void);`                                         |
+## List of files and description:
+| S/N   |       Files          |        Description  |
+|:-----:|:--------------------:|:-------------------|
+|1. | [0-binary_to_uint.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/0-binary_to_uint.c) | A function that converts a binary number to an **unsigned int**. <ul><li>Prototype: **unsigned int binary_to_uint(const char *b);**</li><li>where **b** is pointing to a string of **0** and **1** chars</li><li>Return: the converted number, or **0** if<ul><li>there is one or more chars in the string **b** that is not **0** or **1**</li><li>**b** is **NULL**</li></li></ul> |
+|2.|[1-print_binary.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/1-print_binary.c) | A function that prints the binary representation of a number. <ul><li>Prototype: **void print_binary(unsigned long int n);**</li><li>Format: see example</li><li>You are not allowed to use arrays</li><li>You are not allowed to use **malloc**</li><li>You are not allowed to use the % or / operators</li></ul>|
+|3. |[2-get_bit.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/2-get_bit.c) |A function that returns the value of a bit at a given index. <ul><li>Prototype: **int get_bit(unsigned long int n, unsigned int index);** </li><li>where index is the index, starting from 0 of the bit you want to get</li><li>Returns: the value of the bit at index index or -1 if an error occured</li></ul>|
+|4.|[3-set_bit.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/3-set_bit.c) |A function that sets the value of a bit to **1** at a given index. <ul><li>Prototype: **int set_bit(unsigned long int *n, unsigned int index);** </li><li>where index is the **index**, starting from **0** of the bit you want to set</li><li>Returns: 1 if it worked, or -1 if an error occurred</li></ul>|
+|5. |[4-clear_bit.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/4-clear_bit.c) | A function that sets the value of a bit to **0** at a given index. <ul><li>Prototype: **int clear_bit(unsigned long int *n, unsigned int index);** </li><li>where index is the index, starting from 0 of the bit you want to set</li><li>Returns: 1 if it worked, or -1 if an error occurred</li></ul> |
+|6. |[5-flip_bits.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/5-flip_bits.c) | A  function that returns the number of bits you would need to flip to get from one number to another. <ul><li>Prototype: **unsigned int flip_bits(unsigned long int n, unsigned long int m);** </li><li>You are not allowed to use the % or / operators</li></ul> |
+|7. |[100-get_endianness.c](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/100-get_endianness.c) | A function that checks the endianness.<ul><li>Prototype: **int get_endianness(void);** </li><li>Returns: **0** if big endian, **1** if little endian</li></ul>|
+|8. |[101-password](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/101-password) | To find the password for [this program.](https://github.com/holbertonschool/0x13.c) <ul><li>Save the password in the file [101-password](https://github.com/Dikachis/alx-low_level_programming/blob/master/0x14-bit_manipulation/101-password)</li><li>Your file should contain the exact password, no new line, no extra space</li></ul>|
 
-## Tasks :page_with_curl:
-
-* **0. 0**
-  * [0-binary_to_uint.c](./0-binary_to_uint.c): C function that converts a binary number
-  to an `unsigned int`.
-  * The parameter `b` is a pointer to a string of `0` and `1` characters.
-  * If `b` is `NULL` or there are one or more characters in `b` that are
-  not `0` or `1` - returns `0`.
-  * Otherwise - returns the converted number.
-
-* **1. 1**
-  * [1-print_binary.c](./1-print_binary.c): C function that prints the binary representation
-  of a number.
-
-* **2. 10**
-  * [2-get_bit.c](./2-get_bit.c): C function that returns the value of a bit at a
-  given index.
-  * Indices start at `0`.
-  * If an error occurs - returns `-1`.
-  * Otherwise - returns the value of the bit at the given index.
-
-* **3. 11**
-  * [3-set_bit.c](./3-set_bit.c): C function that sets the value of a bit at a given index
-  to `1`.
-  * If an error occurs - returns `-1`.
-  * Otherwise - returns `1`.
-
-* **4. 100**
-  * [4-clear_bit.c](./4-clear_bit.c): C function that sets the value of a bit at
-  a given index to `0`.
-  * If an error occurs - returns `-1`.
-  * Otherwise - returns `1`.
-
-* **5. 101**
-  * [5-flip_bits.c](./5-flip_bits.c): C function that returns the number of bits needed
-  to be flipped to get from one number to another.
-
-* **6. Endianness**
-  * [100-get_endianness.c](./100-get_endianness.c): C function that checks the endianness.
-  * If big-endian - returns `0`.
-  * If little-endian - returns `1`.
-
-* **7. Crackme3**
-  * [101-password](./101-password): File containing the password for the
-  [crackme3](https://github.com/holbertonschool/0x13.c) executable.
+[Alx](https://alx-intranet.hbtn.io/projects/232#task-1022) | [Firefox Pocket](https://getpocket.com/my-list?src=navbar)
